@@ -83,3 +83,6 @@ DerivedDataCache/*
 
 # Content
 Content/StarterContent/*
+
+# Draw.io
+*.bkp
