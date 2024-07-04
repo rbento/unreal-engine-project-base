@@ -1,5 +1,6 @@
 # Rider
 .idea/
+*.user
 
 # Visual Studio user settings files that should be ignored.
 .vs/
