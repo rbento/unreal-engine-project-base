@@ -1,8 +1,12 @@
+
+# Draw.io
+*.bkp
+
 # Rider
 .idea/
 *.user
 
-# Visual Studio user settings files that should be ignored.
+# Visual Studio 
 .vs/
 *.pdb
 *-Debug.*
@@ -82,11 +86,10 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-# Content
+# Content / Downloadable assets
 Content/MSPresets/*
 Content/Megascans/*
 Content/Mixamo/*
 Content/StarterContent/*
 
-# Draw.io
-*.bkp
+# Project specific assets
