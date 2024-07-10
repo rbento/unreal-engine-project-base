@@ -1,10 +1,10 @@
 @echo off
 
-set ROOTDIR=%~dp0
-set ROOTDIR=%ROOTDIR:~0,-1%
+set ROOT_DIR=%~dp0
+set ROOT_DIR=%ROOT_DIR:~0,-1%
 
 set PROJECT=%1
-set PROJECT_DIR=%ROOTDIR%\%PROJECT%
+set PROJECT_DIR=%ROOT_DIR%\%PROJECT%
 
 set FOLDERS=.idea .vs Binaries DerivedDataCache Intermediate Saved
 (for %%F in (%FOLDERS%) do (
