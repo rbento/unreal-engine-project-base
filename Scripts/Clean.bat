@@ -1,18 +1,24 @@
-@echo off
+@ECHO OFF
 
-set ROOT_DIR=%~dp0
-set ROOT_DIR=%ROOT_DIR:~0,-1%
+IF "%1" == "" (
+    ECHO ABORTED: Unreal project name name was not provided
+    ECHO EXAMPLE: Clean MyProject
+    EXIT /B
+)
 
-set PROJECT=%1
-set PROJECT_DIR=%ROOT_DIR%\%PROJECT%
+SET ROOT_DIR=%~dp0
+SET ROOT_DIR=%ROOT_DIR:~0,-1%
 
-set FOLDERS=.idea .vs Binaries DerivedDataCache Intermediate Saved
-(for %%F in (%FOLDERS%) do (
+SET PROJECT=%1
+SET PROJECT_DIR=%ROOT_DIR%\%PROJECT%
+
+SET FOLDERS=.idea .vs Binaries DerivedDataCache Intermediate Saved
+(FOR %%F IN (%FOLDERS%) DO (
     rd /s /q "%PROJECT_DIR%\%%F"
 ))
 
-set FILES=.vsconfig %PROJECT%.sln
-(for %%F in (%FILES%) do (
+SET FILES=.vsconfig %PROJECT%.sln
+(FOR %%F IN (%FILES%) DO (
     del "%PROJECT_DIR%\%%F"
 ))
 

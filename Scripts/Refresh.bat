@@ -1,14 +1,30 @@
-@echo off
+@ECHO OFF
 
-set ROOTDIR=%~dp0
-set ROOTDIR=%ROOTDIR:~0,-1%
+IF "%UE_VERSION%" == "" (
+    ECHO ABORTED: Environment Variable 'UE_VERSION' is not defined
+    EXIT /B
+)
 
-set PROJECT=%1
+IF "%UE_HOME%" == "" (
+    ECHO ABORTED: Environment Variable 'UE_HOME' is not defined
+    EXIT /B
+)
 
-set CLEAN_BAT=%ROOTDIR%\Clean.bat
-set BUILD_BAT=%ROOTDIR%\Build.bat
-set OPEN_BAT=%ROOTDIR%\Open.bat
+IF "%1" == "" (
+    ECHO ABORTED: Unreal project name name was not provided
+    ECHO EXAMPLE: Refresh MyProject
+    EXIT /B
+)
 
-call "%CLEAN_BAT%" %PROJECT%
-call "%BUILD_BAT%" %PROJECT%
-call "%OPEN_BAT%" %PROJECT%
+SET ROOTDIR=%~dp0
+SET ROOTDIR=%ROOTDIR:~0,-1%
+
+SET PROJECT=%1
+
+SET CLEAN_BAT=%ROOTDIR%\Clean.bat
+SET BUILD_BAT=%ROOTDIR%\Build.bat
+SET OPEN_BAT=%ROOTDIR%\Open.bat
+
+CALL "%CLEAN_BAT%" %PROJECT%
+CALL "%BUILD_BAT%" %PROJECT%
+CALL "%OPEN_BAT%" %PROJECT%
