@@ -1,16 +1,10 @@
 @ECHO OFF
 
-IF "%1" == "" (
-    ECHO ABORTED: Unreal project name name was not provided
-    ECHO EXAMPLE: Clean MyProject
-    EXIT /B
-)
+SETLOCAL
 
-SET ROOT_DIR=%~dp0
-SET ROOT_DIR=%ROOT_DIR:~0,-1%
+CALL Vars.bat %1 || EXIT /B 
 
-SET PROJECT=%1
-SET PROJECT_DIR=%ROOT_DIR%\%PROJECT%
+ECHO Cleaning %UPROJECT_PATH%
 
 SET FOLDERS=.idea .vs Binaries DerivedDataCache Intermediate Saved
 (FOR %%F IN (%FOLDERS%) DO (
