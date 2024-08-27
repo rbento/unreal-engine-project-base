@@ -5,9 +5,10 @@ SETLOCAL
 CALL Vars.bat %1 || EXIT /B 
 
 SET MODE=Editor
+SET COOK=NO
 IF "%2" == "-standalone" (
     SET MODE=
-    CALL Cook.bat %1 || EXIT /B 
+    SET COOK=YES
 )
 
 ECHO Building with Unreal Engine at %UE%
@@ -21,3 +22,7 @@ SET BUILD_CMD="%BUILD_BAT%" %PROJECT%%MODE% Win64 Development "%UPROJECT_PATH%" 
 ECHO Command: %BUILD_CMD%
 
 CALL %BUILD_CMD%
+
+IF "%COOK%" == "YES" (
+    CALL Cook.bat %1 || EXIT /B 
+)
