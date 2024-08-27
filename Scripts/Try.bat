@@ -2,7 +2,9 @@
 
 SETLOCAL
 
-CALL Vars.bat %1 || EXIT /B 
+SET CURRENT_DIR=%~dp0
+
+CALL "%CURRENT_DIR%Vars.bat" %1 || EXIT /B 
 
 SET RESX=%2
 SET RESY=%3
