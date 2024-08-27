@@ -24,6 +24,6 @@ SET UE_EDITOR=%UE%\Engine\Binaries\Win64\UnrealEditor.exe
 SET TRY_CMD="%UE_EDITOR%" "%UPROJECT_PATH%" -game -log %WINDOWED%
 
 ECHO Trying %PROJECT% in Development Mode - %VIEW_MODE%
-ECHO Command: %PLAY_CMD%
+ECHO Command: %TRY_CMD%
 
 CALL %TRY_CMD%
