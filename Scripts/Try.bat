@@ -19,9 +19,7 @@ IF "%WINDOWED%" NEQ "" (
     SET VIEW_MODE=Windowed - %RESX% X %RESY%
 )
 
-SET UE_EDITOR=%UE%\Engine\Binaries\Win64\UnrealEditor.exe
-
-SET TRY_CMD="%UE_EDITOR%" "%UPROJECT_PATH%" -game -log %WINDOWED%
+SET TRY_CMD="%UE_EDITOR_EXE%" "%UPROJECT_PATH%" -game -log %WINDOWED%
 
 ECHO Trying %PROJECT% in Development Mode - %VIEW_MODE%
 ECHO Command: %TRY_CMD%
