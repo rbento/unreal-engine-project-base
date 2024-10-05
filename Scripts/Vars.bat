@@ -7,12 +7,17 @@ IF "%UE_VERSION%" == "" (
 
 IF "%UE_HOME%" == "" (
     ECHO ABORTED: Environment Variable 'UE_HOME' is not defined
-    EXIT /B 1
+    EXIT /B 2
+)
+
+IF "%UE_PROJECTS_HOME%" == "" (
+    ECHO ABORTED: Environment Variable 'UE_PROJECTS_HOME' is not defined
+    EXIT /B 3
 )
 
 IF "%1" == "" (
-    ECHO ABORTED: Unreal project name name was not provided
-    EXIT /B 1
+    ECHO ABORTED: Unreal project name was not provided
+    EXIT /B 4
 )
 
 SET UE=%UE_HOME%%UE_VERSION%
