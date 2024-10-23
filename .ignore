@@ -1,0 +1,12 @@
+target/
+
+Saved/
+FileOpenOrder/
+Intermediate/
+Plugins/
+DerivedDataCache/
+Build/
+SourceArt/
+Content/
+
+*.uasset
